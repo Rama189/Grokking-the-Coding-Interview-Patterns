@@ -25,9 +25,9 @@ def non_repeat_substring(str):
         if right_char not in frequency_dict:
             frequency_dict[right_char] = window_end
         else:
-            frequency_dict = {}
+            # frequency_dict = {}
             frequency_dict[right_char] = window_end
-            window_start = window_end
+            window_start = max(window_start, frequency_dict[right_char] + 1)
         
         max_length = max(max_length, window_end-window_start + 1)
     
